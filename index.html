@@ -42,8 +42,9 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-panel">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
           <p>Input:</p>
             <textarea id="message" class="form-control" placeholder="Enter your message..."></textarea><br>
             <div class="form-check">
@@ -69,10 +70,11 @@
                 <button onclick="downloadImage()" class="btn btn-success">Download</button>
             </div>
         </div>
-        <div class="right-panel">
+        <div class="col-md-6">
           <p>Output:</p>
             <div id="output" class="mt-3"><canvas></canvas></div>
         </div>
+    </div>
     </div>
 </body>
 </html>
