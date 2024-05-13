@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="CC.ico" type="image/x-icon">
+    <title>Cessation Cipher Generater</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body {
+            padding: 20px;
+        }
+        #message, #key, #max {
+            margin-bottom: 10px;
+        }
+        #usekey, #usemax {
+            margin-bottom: 10px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+        }
+        /* Custom styles */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .left-panel {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .right-panel {
+            flex: 1;
+        }
+        .btn-group {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+          <p>Input:</p>
+            <textarea id="message" class="form-control" placeholder="Enter your message..."></textarea><br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hideElements" onchange="toggleMode()">
+                <label class="form-check-label" for="hideElements">If checked, it will not be encoded</label>
+            </div>
+            <div id="usekey" class="form-check">
+                <input class="form-check-input" type="checkbox" id="useKey" onchange="toggleKeyInput()">
+                <label class="form-check-label" for="useKey">Set Key</label>
+            </div>
+            <div id="keyInput" style="display: none;">
+                <input type="text" id="key" class="form-control" placeholder="Enter your key...">
+            </div>
+            <div id="usemax" class="form-check">
+                <input class="form-check-input" type="checkbox" id="useMax" onchange="toggleMaxInput()">
+                <label class="form-check-label" for="useMax">Set MaxWidth</label>
+            </div>
+            <div id="MaxInput" style="display: none;">
+                <input type="text" id="max" class="form-control" placeholder="Enter max width...">
+            </div>
+            <div class="btn-group">
+                <button onclick="encodeMessage()" class="btn btn-primary">Generate</button>
+                <button onclick="downloadImage()" class="btn btn-success">Download</button>
+            </div>
+        </div>
+        <div class="right-panel">
+          <p>Output:</p>
+            <div id="output" class="mt-3"><canvas></canvas></div>
+        </div>
+    </div>
+</body>
+</html>
