@@ -106,6 +106,11 @@ function gencode(message, key) {
                 count = 1;
                 pointer += 1;
             } else if (key[pointer] === bit) {
+                if (count === 0) {
+                    count = 1;
+                    pointer += 1;
+                    continue;
+                }
                 CT += count.toString();
                 count = 1;
                 pointer += 1;
